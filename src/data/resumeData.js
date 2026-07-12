@@ -83,7 +83,17 @@ export const resumeData = {
       company: "NeST Digital Academy",
       period: "October 2023 - Present",
       description: "Gained hands-on experience in building scalable single-page applications using Angular, integrating RESTful APIs, and implementing UI components using modern responsive styling standards.",
-      credentialLink: "https://drive.google.com/file/d/10OGaT2R-WuJvGWTLasyDilxwcS834Nps/view?usp=drive_link" // REPLACE WITH YOUR ACTUAL GOOGLE DRIVE LINK
+      credentialLink: "https://drive.google.com/file/d/10OGaT2R-WuJvGWTLasyDilxwcS834Nps/view?usp=drive_link",
+      project: {
+        title: "ONLINE ANIME STREAMING PLATFORM",
+        tech: "Angular, TypeScript, RxJS, Bootstrap, HTML5/CSS3",
+        liveLink: "https://final-pied-nu.vercel.app/",
+        bullets: [
+          "Developed a high-performance single-page anime streaming platform using Angular and TypeScript",
+          "Implemented reactive search, filtering, and categorization of anime titles with complex state management via RxJS",
+          "Designed a modern dark-themed user interface utilizing Bootstrap and customized CSS modules for a dynamic media streaming experience"
+        ]
+      }
     }
   ],
   projects: [

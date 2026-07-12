@@ -121,17 +121,108 @@ export default function Internship() {
               </div>
             </div>
 
-            {/* Credential Action Link */}
+            {/* Internship Project Sub-Card */}
+            {internship.project && (
+              <div style={{
+                marginTop: '16px',
+                padding: '24px',
+                borderRadius: '12px',
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(255, 255, 255, 0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '12px'
+                }}>
+                  <div>
+                    <span style={{
+                      fontSize: '0.75rem',
+                      fontWeight: '700',
+                      color: 'var(--accent-cyan)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      display: 'block',
+                      marginBottom: '4px'
+                    }}>
+                      Featured Internship Project
+                    </span>
+                    <h4 style={{ fontSize: '1.25rem', color: '#ffffff', fontWeight: '700', margin: 0 }}>
+                      {internship.project.title}
+                    </h4>
+                  </div>
+                  
+                  {/* Tech stack tags */}
+                  <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '8px'
+                  }}>
+                    {internship.project.tech.split(',').map((techName, tIdx) => (
+                      <span key={tIdx} style={{
+                        fontSize: '0.75rem',
+                        fontWeight: '600',
+                        color: 'var(--text-secondary)',
+                        background: 'rgba(255, 255, 255, 0.03)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        padding: '3px 10px',
+                        borderRadius: '12px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em'
+                      }}>
+                        {techName.trim()}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <ul style={{
+                  paddingLeft: '20px',
+                  color: 'var(--text-secondary)',
+                  fontSize: '0.95rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px',
+                  margin: '8px 0',
+                  lineHeight: '1.6'
+                }}>
+                  {internship.project.bullets.map((bullet, bIdx) => (
+                    <li key={bIdx} style={{ listStyleType: 'circle' }}>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Action buttons row */}
             <div style={{
               display: 'flex',
-              justifyContent: 'flex-start',
+              flexWrap: 'wrap',
+              gap: '16px',
               marginTop: '10px'
             }}>
+              {internship.project && (
+                <a 
+                  href={internship.project.liveLink} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="btn btn-primary"
+                  style={{ fontSize: '0.9rem', padding: '10px 22px' }}
+                >
+                  Live Project Demo <ExternalLink size={16} />
+                </a>
+              )}
               <a 
                 href={internship.credentialLink} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="btn btn-primary"
+                className="btn btn-secondary"
                 style={{ fontSize: '0.9rem', padding: '10px 22px' }}
               >
                 View Internship Certificate <ExternalLink size={16} />
